@@ -1,0 +1,22 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+@font-face {
+  font-family: "Futura";
+  src:
+    url("futura-heavy-oblique-webfont.woff") format('woff'),
+    url("futura-heavy-oblique.ttf") format('truetype');
+}
+
+h1 {
+  font-family: "Futura", sans-serif;
+  text-align: center;
+}
+
+h1 span {
+  background-color: Red;
+  color: white;
+  padding-left: 5px;
+  padding-right: 10px;
+}
