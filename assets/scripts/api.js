@@ -1,5 +1,5 @@
 'use strict'
-// const store = require('./store.js')
+const store = require('./store.js')
 
 const signUp = function (data) {
   return $.ajax({
@@ -39,15 +39,15 @@ const signIn = function (data) {
 // }
 //
 //
-// const findGame = function () {
-//   return $.ajax({
-//     method: 'GET',
-//     url: 'https://aqueous-atoll-85096.herokuapp.com/games',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const findProducts = function () {
+  return $.ajax({
+    method: 'GET',
+    url: 'https://salty-wave-53150.herokuapp.com/products',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 //
 // const createGame = function () {
 //   return $.ajax({
@@ -96,12 +96,6 @@ const signIn = function (data) {
 
 module.exports = {
   signUp,
-  signIn
-  // changePassword,
-  // signOut,
-  // findGame,
-  // createGame,
-  // find1Game,
-  // updateGame,
-  // updateWinLose
+  signIn,
+  findProducts
 }
