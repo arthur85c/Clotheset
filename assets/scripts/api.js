@@ -1,18 +1,18 @@
 'use strict'
-const store = require('./store.js')
+// const store = require('./store.js')
 
-// const signUp = function (data) {
-//   return $.ajax({
-//     method: 'POST',
-//     url: 'https://aqueous-atoll-85096.herokuapp.com/sign-up',
-//     data: data
-//   })
-// }
+const signUp = function (data) {
+  return $.ajax({
+    method: 'POST',
+    url: 'https://salty-wave-53150.herokuapp.com/sign-up',
+    data: data
+  })
+}
 
 const signIn = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://salty-wave-53150.herokuapp.com',
+    url: 'https://salty-wave-53150.herokuapp.com/sign-in',
     data: data
   })
 }
@@ -95,7 +95,7 @@ const signIn = function (data) {
 // }
 
 module.exports = {
-  // signUp,
+  signUp,
   signIn
   // changePassword,
   // signOut,
