@@ -21,7 +21,16 @@ const onSignIn = function (event) {
     .catch()
 }
 
+const onGetProducts = function (event) {
+  event.preventDefault()
+  console.log('Products')
+
+  api.findProducts()
+    .then(ui.showProducts)
+    .catch()
+}
 module.exports = {
   onSignIn,
-  onSignUp
+  onSignUp,
+  onGetProducts
 }

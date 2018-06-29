@@ -6,6 +6,11 @@ const signInSuccess = function (response) {
   console.log(store.user)
 }
 
+const showProducts = function (response) {
+  console.log(response)
+}
+
 module.exports = {
-  signInSuccess
+  signInSuccess,
+  showProducts
 }
