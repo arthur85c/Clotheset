@@ -39,7 +39,6 @@ const signOut = function () {
   })
 }
 
-
 const findProducts = function () {
   return $.ajax({
     method: 'GET',
