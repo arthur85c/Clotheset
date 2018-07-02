@@ -1,0 +1,17 @@
+
+{{#each products as |product|}}
+  {{log product}}
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src={{product.picture_url}} alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Item Name: {{product.name}}</h5>
+          <ul>
+          <li>Brand: {{product.brand}}</li>
+          <li>Category: {{product.category}}</li>
+          <li>Color: {{product.color}}</li>
+          <li>Size: {{product.size}}</li>
+          <li>Sell Price: ${{product.sell_price}}</li>
+        </ul>
+        </div>
+      </div>
+{{/each}}

@@ -1,10 +1,11 @@
 'use strict'
-// const store = require('./store.js')
+const store = require('./store.js')
+const config = require('./config.js')
 
 const signUp = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://salty-wave-53150.herokuapp.com/sign-up',
+    url: config.apiUrl + '/sign-up',
     data: data
   })
 }
@@ -12,42 +13,41 @@ const signUp = function (data) {
 const signIn = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://salty-wave-53150.herokuapp.com/sign-in',
+    url: config.apiUrl + '/sign-in',
     data: data
   })
 }
 
-// const changePassword = function (data) {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: 'https://aqueous-atoll-85096.herokuapp.com/change-password',
-//     data: data,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-//
-// const signOut = function () {
-//   return $.ajax({
-//     method: 'DELETE',
-//     url: 'https://aqueous-atoll-85096.herokuapp.com/sign-out',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-//
-//
-// const findGame = function () {
-//   return $.ajax({
-//     method: 'GET',
-//     url: 'https://aqueous-atoll-85096.herokuapp.com/games',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const changePassword = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/change-password',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const signOut = function () {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/sign-out',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const findProducts = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/products',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 //
 // const createGame = function () {
 //   return $.ajax({
@@ -96,12 +96,8 @@ const signIn = function (data) {
 
 module.exports = {
   signUp,
-  signIn
-  // changePassword,
-  // signOut,
-  // findGame,
-  // createGame,
-  // find1Game,
-  // updateGame,
-  // updateWinLose
+  signIn,
+  findProducts,
+  changePassword,
+  signOut
 }
