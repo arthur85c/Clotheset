@@ -60,11 +60,37 @@ const createProduct = function (data) {
   })
 }
 
+const updateProduct = function (id, data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/products/' + id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  }
+  )
+}
+
+const deleteProduct = function (data) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/products/' + data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  }
+  )
+}
+
 module.exports = {
   signUp,
   signIn,
   findProducts,
   changePassword,
   signOut,
-  createProduct
+  createProduct,
+  updateProduct,
+  deleteProduct
 }
