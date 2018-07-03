@@ -1,57 +1,115 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1><span>Clotheset</span></h1>
-      <div class="sign-in">
-      <form id="login-form">
-            <div class="form-group">
-              <label>Email address</label>
-              <input type="text" class="form-control" name="credentials[email]" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-            </div>
-            <div class="form-check">
-              <button type="submit" class="btn btn-primary">Login</button>
-            </div>
-          </form>
-        </div>
-    <h2>Sign up</h2>
-    <div class="sign-up">
-    <form id="sign-up-form">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" name="credentials[email]" placeholder="Enter email">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1><span>Clotheset</span></h1>
+  <div class="sign-in">
+    <h2>Sign In</h2>
+    <form id="login-form">
+      <div class="form-group col-xs-6 col-sm-6">
+        <label>Email address</label>
+        <input type="text" class="form-control" name="credentials[email]" placeholder="example@example.com">
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password Confirmation</label>
-        <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password">
+      <div class="form-group col-xs-6 col-sm-6">
+        <label>Password</label>
+        <input type="password" class="form-control" name="credentials[password]">
       </div>
       <div class="form-check">
-      <button type="submit" class="btn btn-primary">Sign Me Up!</button>
+        <button type="submit" class="btn btn-primary">Login</button>
       </div>
     </form>
-    </div>
-    <div class="get-Products">
+  </div>
+
+  <div class="sign-up">
+    <h2>Sign up</h2>
+    <form id="sign-up-form">
+      <div class="form-group col-xs-4 col-sm-4">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
+      </div>
+      <div class="form-group col-xs-4 col-sm-4">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" name="credentials[password]">
+      </div>
+      <div class="form-group col-xs-4 col-sm-4">
+        <label for="exampleInputPassword1">Password Confirmation</label>
+        <input type="password" class="form-control" name="credentials[password_confirmation]">
+      </div>
+      <div class="form-check">
+        <button type="submit" class="btn btn-primary">Sign Me Up!</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="get-Products">
     <button type="button" class="btn btn-primary">Get all my products</button>
-    </div>
-    <div class="products">
-    </div>
-    </body>
+  </div>
+  <div class="signOut">
+    <button type="button" class="btn btn-primary">Signout</button>
+  </div>
+  <div class="products">
+  </div>
+
+  <div>
+    <h2>New Products</h2>
+    <form class="new-product">
+      <div class="form-group col-xs-6 col-sm-6">
+        <label>Item Name</label>
+        <input type="text" class="form-control" name="product[name]" placeholder="ex: Yeezy 350 V2">
+      </div>
+      <div class="form-group col-xs-6 col-sm- 6">
+        <label>Brand</label>
+        <input type="text" class="form-control" name="product[brand]" placeholder="ex: Supreme, Adidas, etc.">
+      </div>
+      <div class="form-group col-xs-3 col-sm-3">
+        <label>Category</label>
+        <select class="form-control" name="product[category]">
+      <option>T-shirt</option>
+      <option>Shirts</option>
+      <option>Jacket</option>
+      <option>Sweater</option>
+      <option>Pants</option>
+      <option>Shorts</option>
+      <option>Accessories</option>
+      <option>Hats</option>
+      <option>Bags</option>
+      <option>Shoes</option>
+      <option>Skates</option>
+    </select>
+      </div>
+      <div class="form-group col-xs-3 col-sm- 3">
+        <label>Size</label>
+        <input type="text" class="form-control" name="product[size]" placeholder="ex: (Shirts) S, M, (Shoes) Size 10, Size 13, (Pants) 29, 30, 31">
+      </div>
+      <div class="form-group col-xs-3 col-sm-3">
+        <label>Price</label>
+        <input type="text" class="form-control" name="product[sell_price]" placeholder="In USD, without $ sign ">
+      </div>
+      <div class="form-group col-xs-3 col-sm-3">
+        <label>Color</label>
+        <input type="text" class="form-control" name="product[color]" placeholder="In USD, without $ sign ">
+      </div>
+      <div class="form-group col-xs-6 col-sm-6">
+        <label>Picture URL</label>
+        <input type="text" class="form-control" name="product[picture_url]" placeholder="ex: https://stockx-360.imgix.net/Adidas-Yeezy-Boost-350-V2-Butter/Images/Adidas-Yeezy-Boost-350-V2-Butter/Lv2/img36.jpg?auto=format,compress&w=1117&q=90">
+      </div>
+      <div class="form-check">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+
 </html>

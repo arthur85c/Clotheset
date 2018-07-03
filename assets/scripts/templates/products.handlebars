@@ -4,14 +4,16 @@
     <div class="card" style="width: 20rem;">
         <img class="card-img-top" src={{product.picture_url}} alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Item Name: {{product.name}}</h5>
+          <h5 class="card-title">Item Name: <b>{{product.name}}</b></h5>
           <ul>
-          <li>Brand: {{product.brand}}</li>
-          <li>Category: {{product.category}}</li>
-          <li>Color: {{product.color}}</li>
-          <li>Size: {{product.size}}</li>
-          <li>Sell Price: ${{product.sell_price}}</li>
+          <li>Brand: <b>{{product.brand}}</b></li>
+          <li>Category: <b>{{product.category}}</b></li>
+          <li>Color: <b>{{product.color}}</b></li>
+          <li>Size: <b>{{product.size}}</b></li>
+          <li>Sell Price: <b>${{product.sell_price}}</b></li>
         </ul>
+        <button type="button" class="btn btn-info">Update</button>
+        <button type="button" class="btn btn-danger">Delete</button>
         </div>
       </div>
 {{/each}}

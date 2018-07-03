@@ -26,17 +26,29 @@ h5 {
 }
 
 .card {
-  float: left;
-}
-
-.card {
   margin: 15px;
   padding-left: 7px;
   padding-right: 7px;
   border: 2px solid #DCDCDC;
   border-radius: 5px;
+  float: left;
 }
 
 img {
   width: 18rem;
+}
+
+button {
+  margin: 10px;
+  padding: 5px;
+}
+
+.btn-info {
+  float: left;
+  margin-bottom: 10px;
+}
+
+.btn-danger {
+  float: right;
+  margin-bottom: 10px;
 }

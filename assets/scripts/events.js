@@ -12,10 +12,8 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('Hi')
-  console.log(getFormFields(event.target))
   const data = getFormFields(event.target)
-
+  console.log(data)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch()
@@ -23,14 +21,31 @@ const onSignIn = function (event) {
 
 const onGetProducts = function (event) {
   event.preventDefault()
-  console.log('Products')
-
   api.findProducts()
     .then(ui.showProducts)
     .catch()
 }
+
+const onSignOut = function (event) {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.signoutSuccess)
+    .catch(ui.signoutFail)
+}
+
+const onNewProduct = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.createProduct(data)
+    .then(ui.createProductSuccess)
+    .catch()
+}
+
 module.exports = {
   onSignIn,
   onSignUp,
-  onGetProducts
+  onGetProducts,
+  onSignOut,
+  onNewProduct
 }

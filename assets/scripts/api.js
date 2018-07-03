@@ -48,56 +48,23 @@ const findProducts = function () {
     }
   })
 }
-//
-// const createGame = function () {
-//   return $.ajax({
-//     method: 'POST',
-//     url: 'https://aqueous-atoll-85096.herokuapp.com/games',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-//
-// const find1Game = function (data) {
-//   console.log('data is ', data)
-//   return $.ajax({
-//     method: 'GET',
-//     url: 'https://aqueous-atoll-85096.herokuapp.com/' + 'games/' + data.game.id,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-//
-// const updateGame = function (data) {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: 'https://aqueous-atoll-85096.herokuapp.com/' + 'games/' + store.newGame.id,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     body: 'game delta',
-//     data
-//   })
-// }
-//
-// const updateWinLose = function (data) {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: 'https://aqueous-atoll-85096.herokuapp.com/' + 'games/' + store.newGame.id,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     body: 'game delta',
-//     data
-//   })
-// }
+
+const createProduct = function (data) {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/products',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   findProducts,
   changePassword,
-  signOut
+  signOut,
+  createProduct
 }

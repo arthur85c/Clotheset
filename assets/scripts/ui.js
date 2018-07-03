@@ -2,9 +2,7 @@ const store = require('./store.js')
 const handlebars = require('./templates/products.handlebars')
 
 const signInSuccess = function (response) {
-  console.log(response)
   store.user = response.user
-  console.log(store.user)
 }
 
 const showProducts = function (response) {
@@ -13,7 +11,18 @@ const showProducts = function (response) {
   $('.products').append(showProducts)
 }
 
+const signoutSuccess = function (response) {
+  $('.products').html(' ')
+  console.log('You signed out!')
+}
+
+const createProductSuccess = function (response) {
+  $('.products').html('Your Product have been created successfully!')
+}
+
 module.exports = {
   signInSuccess,
-  showProducts
+  showProducts,
+  signoutSuccess,
+  createProductSuccess
 }
