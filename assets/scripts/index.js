@@ -13,4 +13,6 @@ $(() => {
   $('.get-Products').on('click', events.onGetProducts)
   $('.signOut').on('click', events.onSignOut)
   $('.new-product').on('submit', events.onNewProduct)
+  $('.products').on('submit', '.update-product', events.onUpdateProduct)
+  $('.products').on('click', '.btn-danger', events.onDeleteProduct)
 })

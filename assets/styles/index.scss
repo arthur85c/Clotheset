@@ -32,10 +32,12 @@ h5 {
   border: 2px solid #DCDCDC;
   border-radius: 5px;
   float: left;
+  height: 40rem;
 }
 
 img {
-  width: 18rem;
+  width: calc(18rem - 14px);
+  margin: 5px 10px;
 }
 
 button {
@@ -51,4 +53,16 @@ button {
 .btn-danger {
   float: right;
   margin-bottom: 10px;
+}
+
+.createProduct {
+  clear: both;
+}
+
+.modal-footer {
+  clear: both;
+}
+
+#createButton {
+  clear: both;
 }

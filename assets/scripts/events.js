@@ -36,9 +36,26 @@ const onSignOut = function (event) {
 const onNewProduct = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.createProduct(data)
     .then(ui.createProductSuccess)
+    .catch()
+}
+
+const onUpdateProduct = function (event) {
+  event.preventDefault()
+  const id = event.target.getAttribute('data-id')
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.updateProduct(id, data)
+    .then()
+    .catch()
+}
+
+const onDeleteProduct = function (event) {
+  event.preventDefault()
+  const id = event.target.getAttribute('data-id')
+  api.deleteProduct(id)
+    .then(ui.deleteSuccess)
     .catch()
 }
 
@@ -47,5 +64,7 @@ module.exports = {
   onSignUp,
   onGetProducts,
   onSignOut,
-  onNewProduct
+  onNewProduct,
+  onUpdateProduct,
+  onDeleteProduct
 }

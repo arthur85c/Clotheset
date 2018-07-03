@@ -20,14 +20,14 @@
     <form id="login-form">
       <div class="form-group col-xs-6 col-sm-6">
         <label>Email address</label>
-        <input type="text" class="form-control" name="credentials[email]" placeholder="example@example.com">
+        <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
       </div>
       <div class="form-group col-xs-6 col-sm-6">
         <label>Password</label>
         <input type="password" class="form-control" name="credentials[password]">
       </div>
       <div class="form-check">
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></button>
       </div>
     </form>
   </div>
@@ -48,7 +48,7 @@
         <input type="password" class="form-control" name="credentials[password_confirmation]">
       </div>
       <div class="form-check">
-        <button type="submit" class="btn btn-primary">Sign Me Up!</button>
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
       </div>
     </form>
   </div>
@@ -57,12 +57,13 @@
     <button type="button" class="btn btn-primary">Get all my products</button>
   </div>
   <div class="signOut">
-    <button type="button" class="btn btn-primary">Signout</button>
+    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></button>
   </div>
+
   <div class="products">
   </div>
 
-  <div>
+  <div class="createProduct">
     <h2>New Products</h2>
     <form class="new-product">
       <div class="form-group col-xs-6 col-sm-6">
@@ -105,8 +106,8 @@
         <label>Picture URL</label>
         <input type="text" class="form-control" name="product[picture_url]" placeholder="ex: https://stockx-360.imgix.net/Adidas-Yeezy-Boost-350-V2-Butter/Images/Adidas-Yeezy-Boost-350-V2-Butter/Lv2/img36.jpg?auto=format,compress&w=1117&q=90">
       </div>
-      <div class="form-check">
-        <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="form-check " id="createButton">
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></button>
       </div>
     </form>
   </div>
