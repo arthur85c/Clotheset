@@ -2,7 +2,7 @@ const ui = require('./ui.js')
 const api = require('./api.js')
 const getFormFields = require('../../lib/get-form-fields.js')
 
-const onSignUp = function (event) {
+const onSignUp = function(event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signUp(data)
@@ -10,7 +10,7 @@ const onSignUp = function (event) {
     .catch()
 }
 
-const onSignIn = function (event) {
+const onSignIn = function(event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log(data)
@@ -19,21 +19,21 @@ const onSignIn = function (event) {
     .catch()
 }
 
-const onGetProducts = function (event) {
+const onGetProducts = function(event) {
   event.preventDefault()
   api.findProducts()
     .then(ui.showProducts)
     .catch()
 }
 
-const onSignOut = function (event) {
+const onSignOut = function(event) {
   event.preventDefault()
   api.signOut()
     .then(ui.signoutSuccess)
     .catch(ui.signoutFail)
 }
 
-const onNewProduct = function (event) {
+const onNewProduct = function(event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.createProduct(data)
@@ -41,19 +41,22 @@ const onNewProduct = function (event) {
     .catch()
 }
 
-const onUpdateProduct = function (event) {
+const onUpdateProduct = function(event) {
   event.preventDefault()
+  console.log(event)
   const id = event.target.getAttribute('data-id')
   const data = getFormFields(event.target)
   console.log(data)
   api.updateProduct(id, data)
-    .then()
+    .then(ui.updateSuccess)
     .catch()
 }
 
-const onDeleteProduct = function (event) {
+const onDeleteProduct = function(event) {
   event.preventDefault()
+  console.log(event.target)
   const id = event.target.getAttribute('data-id')
+  console.log(id)
   api.deleteProduct(id)
     .then(ui.deleteSuccess)
     .catch()
