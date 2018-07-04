@@ -29,10 +29,17 @@ const deleteSuccess = function (response) {
     .then(showProducts)
 }
 
+const updateSuccess = function (response) {
+  $('.modal-footer').append(```<div class="alert alert-success" role="alert">
+  Update Success
+  </div>```)
+}
+
 module.exports = {
   signInSuccess,
   showProducts,
   signoutSuccess,
   createProductSuccess,
-  deleteSuccess
+  deleteSuccess,
+  updateSuccess
 }
