@@ -15,7 +15,11 @@
 
 <body>
   <h1><span>Clotheset</span></h1>
-  <div class="sign-in">
+  <div class="alerts">
+  </div>
+
+
+    <div class="sign-in">
     <h2>Sign In</h2>
     <form id="login-form">
       <div class="form-group col-xs-6 col-sm-6">
@@ -27,7 +31,7 @@
         <input type="password" class="form-control" name="credentials[password]">
       </div>
       <div class="form-check">
-        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></button>
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></button>
       </div>
     </form>
   </div>
@@ -48,68 +52,15 @@
         <input type="password" class="form-control" name="credentials[password_confirmation]">
       </div>
       <div class="form-check">
-        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
       </div>
     </form>
   </div>
 
-  <div class="get-Products">
-    <button type="button" class="btn btn-primary">Get all my products</button>
-  </div>
-  <div class="signOut">
-    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></button>
+  <div class="buttons">
   </div>
 
   <div class="products">
-  </div>
-
-  <div class="createProduct">
-    <h2>New Products</h2>
-    <form class="new-product">
-      <div class="form-group col-xs-6 col-sm-6">
-        <label>Item Name</label>
-        <input type="text" class="form-control" name="product[name]" placeholder="ex: Yeezy 350 V2">
-      </div>
-      <div class="form-group col-xs-6 col-sm- 6">
-        <label>Brand</label>
-        <input type="text" class="form-control" name="product[brand]" placeholder="ex: Supreme, Adidas, etc.">
-      </div>
-      <div class="form-group col-xs-3 col-sm-3">
-        <label>Category</label>
-        <select class="form-control" name="product[category]">
-      <option>T-shirt</option>
-      <option>Shirts</option>
-      <option>Jacket</option>
-      <option>Sweater</option>
-      <option>Pants</option>
-      <option>Shorts</option>
-      <option>Accessories</option>
-      <option>Hats</option>
-      <option>Bags</option>
-      <option>Shoes</option>
-      <option>Skates</option>
-    </select>
-      </div>
-      <div class="form-group col-xs-3 col-sm- 3">
-        <label>Size</label>
-        <input type="text" class="form-control" name="product[size]" placeholder="ex: (Shirts) S, M, (Shoes) Size 10, Size 13, (Pants) 29, 30, 31">
-      </div>
-      <div class="form-group col-xs-3 col-sm-3">
-        <label>Price</label>
-        <input type="text" class="form-control" name="product[sell_price]" placeholder="In USD, without $ sign ">
-      </div>
-      <div class="form-group col-xs-3 col-sm-3">
-        <label>Color</label>
-        <input type="text" class="form-control" name="product[color]" placeholder="In USD, without $ sign ">
-      </div>
-      <div class="form-group col-xs-6 col-sm-6">
-        <label>Picture URL</label>
-        <input type="text" class="form-control" name="product[picture_url]" placeholder="ex: https://stockx-360.imgix.net/Adidas-Yeezy-Boost-350-V2-Butter/Images/Adidas-Yeezy-Boost-350-V2-Butter/Lv2/img36.jpg?auto=format,compress&w=1117&q=90">
-      </div>
-      <div class="form-check " id="createButton">
-        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></button>
-      </div>
-    </form>
   </div>
 </body>
 
