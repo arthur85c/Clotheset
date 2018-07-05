@@ -3,6 +3,7 @@ const handlebars = require('./templates/products.handlebars')
 const api = require('./api.js')
 
 const signInSuccess = function (response) {
+  $('.alerts').html(' ')
   store.user = response.user
   api.findProducts()
     .then(showProducts)
@@ -77,8 +78,12 @@ const signInSuccess = function (response) {
 
 const showProducts = function (response) {
   $('.products').html(' ')
-  const showProducts = handlebars({ products: response.products })
-  $('.products').append(showProducts)
+  if (response.products.length === 0) {
+    $('.products').html(`You dont have anything yet! Press the plus button on top to add a new product to your inventory!`)
+  } else {
+    const showProducts = handlebars({ products: response.products })
+    $('.products').append(showProducts)
+  }
 }
 
 const signoutSuccess = function (response) {
@@ -89,7 +94,7 @@ const signoutSuccess = function (response) {
     <form id="login-form">
       <div class="form-group col-xs-6 col-sm-6">
         <label>Email address</label>
-        <input type="text" class="form-control" name="credentials[email]" placeholder="example@example.com">
+        <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
       </div>
       <div class="form-group col-xs-6 col-sm-6">
         <label>Password</label>
@@ -142,11 +147,96 @@ const updateSuccess = function (response) {
     .then(showProducts)
 }
 
+const signInFail = function (response) {
+  $('.alerts').html(`
+    <div class="alert alert-danger" role="alert">
+  Login Failed! Try again.
+</div>
+`)
+  $('.sign-in').html(' ')
+  $('.sign-in').html(`
+    <h2>Sign In</h2>
+      <form id="login-form">
+        <div class="form-group col-xs-6 col-sm-6">
+          <label>Email address</label>
+          <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
+        </div>
+        <div class="form-group col-xs-6 col-sm-6">
+          <label>Password</label>
+          <input type="password" class="form-control" name="credentials[password]">
+        </div>
+        <div class="form-check">
+          <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></button>
+        </div>
+      </form>`)
+}
+
+const createFail = function (response) {
+  $('.alerts').html(' ')
+  $('.alerts').html(`
+    <div class="alert alert-danger" role="alert">
+  Create account Failed! Make sure password matches, or try another email.
+</div>
+`)
+  $('.sign-up').html(``)
+  $('.sign-up').html(`
+    <h2>Sign up</h2>
+    <form id="sign-up-form">
+      <div class="form-group col-xs-4 col-sm-4">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
+      </div>
+      <div class="form-group col-xs-4 col-sm-4">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" name="credentials[password]">
+      </div>
+      <div class="form-group col-xs-4 col-sm-4">
+        <label for="exampleInputPassword1">Password Confirmation</label>
+        <input type="password" class="form-control" name="credentials[password_confirmation]">
+      </div>
+      <div class="form-check">
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+      </div>
+    </form>`)
+}
+
+const createSuccess = function (response)  {
+  $('.alerts').html(' ')
+  $('.alerts').html(`
+    <div class="alert alert-danger" role="alert">
+  Account have been created!
+</div>
+`)
+  $('.sign-up').html(``)
+  $('.sign-up').html(`
+  <h2>Sign up</h2>
+  <form id="sign-up-form">
+    <div class="form-group col-xs-4 col-sm-4">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
+    </div>
+    <div class="form-group col-xs-4 col-sm-4">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" name="credentials[password]">
+    </div>
+    <div class="form-group col-xs-4 col-sm-4">
+      <label for="exampleInputPassword1">Password Confirmation</label>
+      <input type="password" class="form-control" name="credentials[password_confirmation]">
+    </div>
+    <div class="form-check">
+      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+    </div>
+  </form>`)
+}
+
 module.exports = {
   signInSuccess,
   showProducts,
   signoutSuccess,
   createProductSuccess,
   deleteSuccess,
-  updateSuccess
+  updateSuccess,
+  signInFail,
+  createFail,
+  createSuccess
 }
