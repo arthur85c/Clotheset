@@ -7,7 +7,7 @@ const onSignUp = function (event) {
   const data = getFormFields(event.target)
   api.signUp(data)
     .then(ui.createSuccess)
-    .catch()
+    .catch(ui.createFail)
 }
 
 const onSignIn = function (event) {
@@ -15,7 +15,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
-    .catch()
+    .catch(ui.signInFail)
 }
 
 const onGetProducts = function (event) {
