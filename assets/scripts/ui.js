@@ -7,18 +7,18 @@ const signInSuccess = function (response) {
   store.user = response.user
   api.findProducts()
     .then(showProducts)
-  $('.buttons').html(`<div class="get-Products"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></div>
-  <div class="signOut">
-  <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
-  </div>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  $('.buttons').html(`
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductForm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button><br>
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#changePWform"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
+  <div class="signOut"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button></div>
+  <div class="modal fade" id="newProductForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
   <div class="modal-header">
   <h3 class="modal-title" id="exampleModalLongTitle">New Products</h3>
   </div>
   <div class="modal-body">
+
   <form class="new-product">
   <div class="form-group col-xs-6 col-sm-6">
   <label>Item Name</label>
@@ -126,15 +126,14 @@ const signoutSuccess = function (response) {
 }
 
 const createProductSuccess = function (response) {
+  $('.modal').modal('hide')
+  $('.new-product input').val('')
   api.findProducts()
     .then(showProducts)
-  $('.alerts').html(```
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    Product have been created!
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>```)
+  $('.alerts').html(`
+    <div class="alert alert-success" role="alert">
+  Product have been created!
+  </div>`)
 }
 
 const deleteSuccess = function (response) {
@@ -143,90 +142,44 @@ const deleteSuccess = function (response) {
 }
 
 const updateSuccess = function (response) {
+  $(`.modal-backdrop`).remove()
   api.findProducts()
     .then(showProducts)
 }
 
 const signInFail = function (response) {
   $('.alerts').html(`
-    <div class="alert alert-danger" role="alert">
-  Login Failed! Try again.
-</div>
-`)
-  $('.sign-in').html(' ')
-  $('.sign-in').html(`
-    <h2>Sign In</h2>
-      <form id="login-form">
-        <div class="form-group col-xs-6 col-sm-6">
-          <label>Email address</label>
-          <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
-        </div>
-        <div class="form-group col-xs-6 col-sm-6">
-          <label>Password</label>
-          <input type="password" class="form-control" name="credentials[password]">
-        </div>
-        <div class="form-check">
-          <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></button>
-        </div>
-      </form>`)
+    <div class="alert alert-danger alert-dismissible" role="alert">Incorrect login credentials, please try again!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    `)
+  $('.sign-in input').val('')
 }
 
 const createFail = function (response) {
   $('.alerts').html(' ')
   $('.alerts').html(`
-    <div class="alert alert-danger" role="alert">
-  Create account Failed! Make sure password matches, or try another email.
-</div>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+    Create account Failed! Make sure password matches, or try another email.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
 `)
-  $('.sign-up').html(``)
-  $('.sign-up').html(`
-    <h2>Sign up</h2>
-    <form id="sign-up-form">
-      <div class="form-group col-xs-4 col-sm-4">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
-      </div>
-      <div class="form-group col-xs-4 col-sm-4">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" name="credentials[password]">
-      </div>
-      <div class="form-group col-xs-4 col-sm-4">
-        <label for="exampleInputPassword1">Password Confirmation</label>
-        <input type="password" class="form-control" name="credentials[password_confirmation]">
-      </div>
-      <div class="form-check">
-        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
-      </div>
-    </form>`)
+  $('.sign-up input').val('')
 }
 
-const createSuccess = function (response)  {
+const createSuccess = function (response) {
   $('.alerts').html(' ')
   $('.alerts').html(`
-    <div class="alert alert-danger" role="alert">
-  Account have been created!
-</div>
+    <div class="alert alert-success alert-dismissible" role="alert">
+    Account has been created, please login.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
 `)
   $('.sign-up').html(``)
-  $('.sign-up').html(`
-  <h2>Sign up</h2>
-  <form id="sign-up-form">
-    <div class="form-group col-xs-4 col-sm-4">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
-    </div>
-    <div class="form-group col-xs-4 col-sm-4">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" name="credentials[password]">
-    </div>
-    <div class="form-group col-xs-4 col-sm-4">
-      <label for="exampleInputPassword1">Password Confirmation</label>
-      <input type="password" class="form-control" name="credentials[password_confirmation]">
-    </div>
-    <div class="form-check">
-      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
-    </div>
-  </form>`)
 }
 
 module.exports = {

@@ -1,6 +1,5 @@
 
 {{#each products as |product|}}
-  {{log product}}
     <div class="card" style="width: 20rem;">
         <img class="card-img-top" src={{product.picture_url}}>
         <div class="card-body" data-id="{{product.id}}">
@@ -65,7 +64,7 @@
                     <input type="text" class="form-control" name="product[picture_url]" placeholder="ex: https://stockx-360.imgix.net/Adidas-Yeezy-Boost-350-V2-Butter/Images/Adidas-Yeezy-Boost-350-V2-Butter/Lv2/img36.jpg?auto=format,compress&w=1117&q=90" value="{{product.picture_url}}" required>
                   </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                   <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-save" aria-hidden="true"></span></button>
                 </div>
                 </form>
