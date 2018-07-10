@@ -18,13 +18,6 @@ const onSignIn = function (event) {
     .catch(ui.signInFail)
 }
 
-const onGetProducts = function (event) {
-  event.preventDefault()
-  api.findProducts()
-    .then(ui.showProducts)
-    .catch()
-}
-
 const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()
@@ -60,7 +53,6 @@ const onDeleteProduct = function (event) {
 module.exports = {
   onSignIn,
   onSignUp,
-  onGetProducts,
   onSignOut,
   onNewProduct,
   onUpdateProduct,
