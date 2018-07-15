@@ -5,6 +5,7 @@ const getFormFields = require('../../lib/get-form-fields.js')
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   api.signUp(data)
     .then(ui.createSuccess)
     .catch(ui.createFail)
@@ -50,11 +51,20 @@ const onDeleteProduct = function (event) {
     .catch()
 }
 
+const onChangePassword = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.changePassword(data)
+    .then(ui.changeSuccess)
+    .catch(ui.changeFail)
+}
+
 module.exports = {
   onSignIn,
   onSignUp,
   onSignOut,
   onNewProduct,
   onUpdateProduct,
-  onDeleteProduct
+  onDeleteProduct,
+  onChangePassword
 }

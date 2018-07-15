@@ -1,74 +1,36 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+<h1>README</h1>
 
-# browser-template
+Clothest Client deployed link: https://arthur85c.github.io/Clotheset---Client/
+Clothest API repo: https://github.com/arthur85c/ClothesetAPI-true
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
-
-## Installation
-
-1. [Download](../../archive/master.zip) this template.
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-
-## Structure
-
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`config/environment.js`](config/environment.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt test`: runs any automated tests, depends on `grunt build`
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+<h2>Technologies</h2><br>
+HTML, CSS, SCSS, Bootstrap, Javascript, AJAX, Jquery and DOM manipulation
+<hr>
+<h2>What is Clothest?</h2><br>
+Clothest is an web application that I made that helps Hypebeast keeps track of what items they have in their closet. With Clothest, you can create a virtual cloest that you can bring it on the go and wow others with your collection.  
+<hr>
+<h2>Planning</h2><br>
+I wrote out my HTML first, created the basic layout of the webpage and did some research on how to display each of the products. After I have basic layout finished, I worked on the back end API. After I finished the API, tested, I would add in the CSS and perfect V1. V2 would be adding in the second table, the selling website table. V3 would be a joins table between the product table and the selling website table
+<hr>
+<h2>Wireframe</h2><br>
+-
+<hr>
+<h2>User Stories</h2><br>
+As a user, I want to be able to create an account to track all my products.
+As a user, I want to be able to change my password to my account in case someone else have figured out my password.
+As a user, I want to be able to add new products and have the ability to update and delete said items when ever I want.
+As a user, I want to be able to have the page automatically refresh whenever any changes is made.
+<hr>
+<h2>Problem solving</h2><br>
+- Utilizing console.log with every action to determin what each function is putting.
+- Utilizing documentation on methods to find different ways of using it in my application.
+- Breaking down large issues into more managable issues and solving each one before moving on.
+- Constantly commiting changes, so when I mess up, I had a clear commit history to refer back to when lost.
+- Instead of creating new tables that will get added, I decided to use model as it was more elegant. However, models proved to be a bit more challenging as sometimes it was hard to have it display exactly what I wanted to dispaly.
+<hr>
+<h2>Adding Features</h2><br>
+- Given more time, I would like to add another table that has all the popular resale websites out there.
+- Create a third table that would be a joins table of the product table and the website table so I can have listing information.
+<hr>
+<h2>Development Process</h2><br>
+I followed my plan pretty much exactly like I planned, except everything took longer than I expected. I kept on running into some small problems that took for ages to figure out, but it turns out that most of the problems were small typos and extra commas, etc.

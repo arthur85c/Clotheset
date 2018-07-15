@@ -14,5 +14,5 @@ $(() => {
   $('.buttons').on('submit', '.new-product', events.onNewProduct)
   $('.products').on('submit', '.update-product', events.onUpdateProduct)
   $('.products').on('click', '.btn-danger', events.onDeleteProduct)
-  $('.products').on()
+  $('.buttons').on('submit', '#change-PW', events.onChangePassword)
 })
