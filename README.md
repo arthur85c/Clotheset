@@ -13,7 +13,9 @@ Clothest is an web application that I made that helps Hypebeast keeps track of w
 I wrote out my HTML first, created the basic layout of the webpage and did some research on how to display each of the products. After I have basic layout finished, I worked on the back end API. After I finished the API, tested, I would add in the CSS and perfect V1. V2 would be adding in the second table, the selling website table. V3 would be a joins table between the product table and the selling website table
 <hr>
 <h2>Wireframe</h2><br>
--
+- https://imgur.com/a/k7oA9n9<br>
+- https://imgur.com/a/qYdobne<br>
+- https://imgur.com/a/HXq9aVn<br>
 <hr>
 <h2>User Stories</h2><br>
 - As a user, I want to be able to create an account to track all my products.<br>
