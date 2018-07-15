@@ -63,7 +63,7 @@ const signInSuccess = function (response) {
   </div>
   <div class="form-check" id="createButton">
   <div class="modal-footer">
-  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
   <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
   </div>
   </div>
@@ -71,7 +71,34 @@ const signInSuccess = function (response) {
   </div>
   </div>
   </div>
-  </div>`)
+  </div>
+
+  <div class="modal fade" id="changePWform" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLongTitle">Change Password</h3>
+        </div>
+        <div class="modal-body">
+          <form id="change-PW">
+          <form>
+            <div class="form-group">
+              <label>Old Password</label>
+              <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+            </div>
+            <div class="form-group">
+              <label>New Password</label>
+              <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  `)
   $('.sign-in').html(' ')
   $('.sign-up').html(' ')
 }
@@ -87,6 +114,7 @@ const showProducts = function (response) {
 }
 
 const signoutSuccess = function (response) {
+  $('.alerts').html(' ')
   $('.products').html(' ')
   $('.buttons').html(' ')
   $('.sign-in').html(`
@@ -131,12 +159,20 @@ const createProductSuccess = function (response) {
   api.findProducts()
     .then(showProducts)
   $('.alerts').html(`
-    <div class="alert alert-success" role="alert">
-  Product have been created!
-  </div>`)
+    <div class="alert alert-success alert-dismissible" role="alert">Product Added!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>`)
 }
 
 const deleteSuccess = function (response) {
+  $('.alerts').html(`
+    <div class="alert alert-success alert-dismissible" role="alert">Product Deleted!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>`)
   api.findProducts()
     .then(showProducts)
 }
@@ -182,6 +218,32 @@ const createSuccess = function (response) {
   $('.sign-up').html(``)
 }
 
+const changeSuccess = function (response) {
+  $('.modal').modal('hide')
+  $('#change-PW input').val('')
+  $('.alerts').html(' ')
+  $('.alerts').html(`
+    <div class="alert alert-success alert-dismissible" role="alert">
+    Change password Success!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+`)
+}
+
+const changeFail = function (resposne) {
+  $('.modal').modal('hide')
+  $('#change-PW input').val('')
+  $('.alerts').html(' ')
+  $('.alerts').html(`
+    <div class="alert alert-danger alert-dismissible" role="alert">
+    Your old password was incorrect, please try again!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+`)
+}
+
 module.exports = {
   signInSuccess,
   showProducts,
@@ -191,5 +253,7 @@ module.exports = {
   updateSuccess,
   signInFail,
   createFail,
-  createSuccess
+  createSuccess,
+  changeSuccess,
+  changeFail
 }
