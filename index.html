@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Clotheset - A Hypebeast's closet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1><span>Clotheset</span></h1>
+  <div class="alerts">
+  </div>
+
+    <div class="sign-in">
+    <h2>Sign In</h2>
+    <form id="login-form">
+      <div class="form-group col-xs-6 col-sm-6">
+        <label>Email address</label>
+        <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
+      </div>
+      <div class="form-group col-xs-6 col-sm-6">
+        <label>Password</label>
+        <input type="password" class="form-control" name="credentials[password]">
+      </div>
+      <div class="form-check">
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></button>
+      </div>
+    </form>
+  </div>
+
+  <div class="sign-up">
+    <h2>Sign up</h2>
+    <form id="sign-up-form">
+      <div class="form-group col-xs-4 col-sm-4">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" name="credentials[email]" placeholder="example@example.com">
+      </div>
+      <div class="form-group col-xs-4 col-sm-4">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" name="credentials[password]">
+      </div>
+      <div class="form-group col-xs-4 col-sm-4">
+        <label for="exampleInputPassword1">Password Confirmation</label>
+        <input type="password" class="form-control" name="credentials[password_confirmation]">
+      </div>
+      <div class="form-check">
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+      </div>
+    </form>
+  </div>
+
+  <div class="buttons">
+  </div>
+
+  <div class="products">
+  </div>
+</body>
+
+</html>
