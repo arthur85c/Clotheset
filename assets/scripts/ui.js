@@ -179,6 +179,7 @@ const deleteSuccess = function (response) {
 
 const updateSuccess = function (response) {
   $(`.modal-backdrop`).remove()
+  $(`.modal-open`).remove()
   api.findProducts()
     .then(showProducts)
 }
